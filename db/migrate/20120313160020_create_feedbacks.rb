@@ -3,11 +3,11 @@ class CreateFeedbacks < ActiveRecord::Migration
     create_table :feedbacks do |t|
       t.string :url
       t.text :content
-      t.references :user
+      t.references :attendance
 
       t.timestamps
     end
 
-    add_index :feedbacks, :user_id
+    add_index :feedbacks, :attendance_id
   end
 end
