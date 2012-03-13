@@ -8,4 +8,4 @@
 
   %h3 Feedback
 
-  = render :partial => 'feedback/index', :locals => { :feedbacks => @event.attendances.map { |a| a.feedback } }
+  = render :partial => 'feedback/index', :locals => { :feedbacks => @event.attendances.map { |a| a.feedback }.reject { |f| f.nil? } }

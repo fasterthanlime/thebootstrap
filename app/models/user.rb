@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
       self.secret = credentials.secret
       save!
     end
+
+    def attend!(event)
+      self.attendances.create!(:user => self, :event => event)
+    end
 end

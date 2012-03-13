@@ -17,17 +17,18 @@
     margin-right: 20px;
 }
 
-#content, .logout {
+body {
+    font-family: ExistenceLight;
     font-size: 16pt;
 }
 
 #content {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto 0 auto;
 }
 
 .welcome {
-    width: 650px;
+    max-width: 650px;
     margin: 130px auto 0 auto;
     font-size: 22pt;
 }
@@ -39,3 +40,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
+

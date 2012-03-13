@@ -4,7 +4,9 @@ Thebootstrap::Application.routes.draw do
   
   match 'login', :to => 'sessions#new'
   
-  resources :events
+  resources :events do
+    resources :attendances
+  end
   
   root :to => 'events#index'
 end
