@@ -1,0 +1,7 @@
+#content
+  .welcome
+    Woops, sign in seems to have failed: 
+    %strong
+      = params[:message]
+
+  %a.login(href='/auth/twitter') Try again?

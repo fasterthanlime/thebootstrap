@@ -1,15 +1,25 @@
+require 'hashie'
+
 class SessionsController < ApplicationController
-  skip_before_filter :require_login, :only => %w(new create)
+  skip_before_filter :require_login
 
   def new
   end
 
   def create
-    nickname = request.env['omniauth.auth']['info']['nickname']
-    @user = User.find_or_create_by_auth_hash_and_nick(auth_hash, nickname)
+    omni = Hashie::Mash.new request.env['omniauth.auth']
+
+    nick = omni.info.nickname
+    @user = User.find_or_create_by_auth_hash_and_nick(omni.uid, nick)
+    @user.update_credentials!(omni.credentials)
 
     session[:current_auth_hash] = @user.auth_hash
-    redirect_to :root
+
+    if @user.new_record?
+      redirect_to '/pages/welcome'
+    else
+      redirect_to :root
+    end
   end
 
 private
