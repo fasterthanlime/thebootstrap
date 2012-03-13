@@ -17,20 +17,58 @@
     margin-right: 20px;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: ExistenceLight;
+    background: #111;
+    font-family: WCRoughTrad;
     font-size: 16pt;
+    color: white;
+    min-height: 100%;
 }
 
 #content {
+    background: #222;
     max-width: 800px;
     margin: 0 auto 0 auto;
+    min-height: 100%;
+    border-radius: 5px;
+    border: 1px solid #444;
+
+    padding: 50px;
+}
+
+.symbol {
+    font-family: WebSymbolsRegular;
+}
+
+.tagline {
+    margin: 0 auto 80px auto;
+    font-size: 32pt;
+}
+
+.logo {
+    font-family: FFFTusjBold;
+    color: #893;
+    font-size: 82pt;
+}
+
+.tagline p {
+    font-size: 30pt;
+    margin-top: 0;
+    margin-bottom: 60px;
 }
 
 .welcome {
-    max-width: 650px;
-    margin: 130px auto 0 auto;
-    font-size: 22pt;
+    font-size: 20pt;
+}
+
+.welcome strong, .small-logo {
+    color: #893;
+    font-weight: normal;
 }
 
 a {
@@ -41,5 +79,25 @@ a:hover {
     text-decoration: underline;
 }
 
+a, a:visited {
+    color: #28d;
+}
 
+.footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 13pt;
+}
+
+a.button, a.button:visited {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #D32;
+    color: #EEE;
+    width: 300pt;
+    padding: 12pt;
+    margin: 80px auto 0 auto;
+}
 

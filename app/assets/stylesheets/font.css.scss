@@ -33,3 +33,35 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('WebSymbols-Regular-webfont.eot');
+    src: url('WebSymbols-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('WebSymbols-Regular-webfont.woff') format('woff'),
+         url('WebSymbols-Regular-webfont.ttf') format('truetype'),
+         url('WebSymbols-Regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FFFTusjBold';
+    src: url('FFF_Tusj-webfont.eot');
+    src: url('FFF_Tusj-webfont.eot?#iefix') format('embedded-opentype'),
+         url('FFF_Tusj-webfont.woff') format('woff'),
+         url('FFF_Tusj-webfont.ttf') format('truetype'),
+         url('FFF_Tusj-webfont.svg#FFFTusjBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WCRoughTrad';
+    src: url('WC_RoughTrad.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+

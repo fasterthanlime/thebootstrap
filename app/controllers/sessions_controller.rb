@@ -22,6 +22,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:current_auth_hash] = ''
+    redirect_to :root
+  end
+
 private
 
   def auth_hash
