@@ -41,9 +41,13 @@ ActiveRecord::Schema.define(:version => 20120313160020) do
   create_table "users", :force => true do |t|
     t.string   "nick"
     t.string   "auth_hash"
+    t.string   "token"
+    t.string   "secret"
     t.datetime "last_seen"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["auth_hash"], :name => "index_users_on_auth_hash"
 
 end
