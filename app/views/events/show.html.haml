@@ -1,0 +1,11 @@
+= render :partial => 'topbar'
+
+#content
+  = link_to '/' do
+    &larr; Back to events
+
+  = render :partial => 'inline', :locals => { :e => @event }
+
+  %h3 Feedback
+
+  = render :partial => 'feedback/index', :locals => { :feedbacks => @event.attendances.map { |a| a.feedback } }

@@ -1,5 +1,8 @@
+= render :partial => 'topbar'
+
 #content
   %h2 Events
 
-  - @events.each do |e|
-    = render :partial => 'inline', :locals => { :e => e }
+  .events
+    - @events.each do |e|
+      = render :partial => 'events/inline', :locals => { :e => e }
