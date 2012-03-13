@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nick: MyString
+  auth_hash: MyString
+
+two:
+  nick: MyString
+  auth_hash: MyString
