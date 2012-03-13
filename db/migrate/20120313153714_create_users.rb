@@ -4,6 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :nick
       t.string :auth_hash
 
+      t.boolean :admin
+
       # twitter credentials
       t.string :token
       t.string :secret

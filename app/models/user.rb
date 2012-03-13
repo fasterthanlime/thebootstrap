@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    has_many :attendances
     has_many :events, :through => :attendances
 
     def update_credentials!(credentials)

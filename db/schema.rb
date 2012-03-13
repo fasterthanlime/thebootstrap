@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(:version => 20120313160020) do
 
   create_table "attendances", :force => true do |t|
-    t.integer  "users_id"
-    t.integer  "events_id"
+    t.integer  "user_id"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20120313160020) do
   create_table "users", :force => true do |t|
     t.string   "nick"
     t.string   "auth_hash"
+    t.boolean  "admin"
     t.string   "token"
     t.string   "secret"
     t.datetime "last_seen"
