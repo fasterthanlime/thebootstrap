@@ -7,6 +7,10 @@
 */
 
 #content {
+    font-size: 16pt;
+}
+
+#content {
     width: 800px;
     margin: 0 auto 0 auto;
 }
@@ -15,4 +19,12 @@
     width: 650px;
     margin: 130px auto 0 auto;
     font-size: 22pt;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

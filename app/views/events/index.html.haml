@@ -2,11 +2,4 @@
   %h2 Events
 
   - @events.each do |e|
-    %h3= e.name
-    %h4= e.place
-    %p= e.description
-    %p
-      Participants: 
-      - e.users.each do |u|
-        %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
-        
+    = render :partial => 'inline', :locals => { :e => e }
