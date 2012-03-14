@@ -19,3 +19,6 @@
 
 # They are precompiled
 /public/assets/
+
+# Backup files
+*~
