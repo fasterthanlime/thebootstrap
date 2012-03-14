@@ -14,8 +14,10 @@
     - if event.users.empty?
       nobody so far. be the first!
     - else
-      - event.users.each do |u|
+      - event.users.each_with_index do |u, i|
         %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
+        - if i < event.users.count - 1
+          %span> ,
 
   .attend
     - if attendance.nil?
