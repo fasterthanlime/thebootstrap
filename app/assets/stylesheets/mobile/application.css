@@ -1,0 +1,120 @@
+body {
+    font-size: 1em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+form.feedback {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+form {
+    max-width: 95%;
+}
+
+form, form input, form textarea {
+    font-size: 1em;
+}
+
+input, textarea {
+    max-width: 100%;
+}
+
+.feedback input, .feedback textarea {
+    float: none;
+    width: 100%;
+}
+
+form.feedback a.button {
+    margin-top: 0;
+}
+
+
+.event h3.compact , .events h3 {
+    font-size: 1em;
+}
+
+.content {
+    padding: 1em 1em 0.5em 1em;
+
+}
+
+.tagline .logo {
+    font-size: 1em;
+}
+
+.tagline {
+    margin: 0 auto;
+}
+
+.tagline p {
+    font-size: 0.5em;
+    margin-bottom: 2em;
+}
+
+.small-logo {
+    margin: 0;
+    font-size: 2em;
+}
+
+.welcome {
+    font-size: 1em;
+
+}
+
+a.login {
+    font-size: 1em;
+    margin: 3em auto 1em auto;
+    width: 20em;
+    max-width: 80%;
+}
+
+.event .attending, .event .not-attending {
+    font-size: 1em;
+}
+
+.event h3 .symbol {
+    font-size: 3em;
+}
+
+h3 .event-details .symbol {
+    font-size: 1em;
+}
+
+.button {
+    text-size: 1em;
+}
+
+.attend {
+    margin-top: 1em;
+    float: none;
+}
+
+.new-event .button, .attend .button {
+    float: none;
+    margin: 2em auto 1em auto;
+    width: 20em;
+    max-width: 80%;
+}
+
+.delete .button {
+    margin-bottom: 2em;
+}
+
+.account {
+    font-size: 0.6em;
+}
+
+.logout {
+    margin-right: 0;
+
+}
+
+.footer {
+    font-size: 1em;
+    padding: 1em;
+}

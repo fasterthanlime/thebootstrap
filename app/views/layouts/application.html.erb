@@ -3,7 +3,9 @@
 <head>
   <title>the bootstrap</title>
   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "mobile/application.css", :media => "only screen and (max-device-width: 800px)" %>
   <%= javascript_include_tag "application" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
 <body>
