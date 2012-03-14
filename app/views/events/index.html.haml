@@ -32,12 +32,11 @@
     - @events.each do |e|
       = render :partial => 'events/teaser', :locals => { :event => e }
 
-  - if @is_admin
-    .clear
-    .new-event
-      = link_to '/events/new', :class => 'button' do
-        %span.symbol +
-        Create new event
+  .clear
+  .new-event
+    = link_to '/events/new', :class => 'button' do
+      %span.symbol +
+      Suggest an event
 
   .clear
     

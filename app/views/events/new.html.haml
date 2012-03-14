@@ -1,6 +1,9 @@
 .content
   = render :partial => 'topbar', :locals => { :section => 'new event' }
 
+  = link_to '/' do
+    &larr; Back to all events
+
   %h3 New event
 
   = form_tag("/events/") do

@@ -57,6 +57,10 @@ h3 {
     font-family: FFFTusjBold;
 }
 
+.small-logo a:hover {
+    text-decoration: none;
+}
+
 .small-logo strong {
     font-weight: normal;
     color: #893;
