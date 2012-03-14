@@ -6,9 +6,7 @@
 
   = render :partial => 'inline', :locals => { :event => @event, :attendance => @_current_user.attendance_for(@event) }
 
-  %h3 Feedback
-
-  = render :partial => 'feedback/index', :locals => { :event => @event, :feedbacks => @event.attendances.map { |a| a.feedback }.reject { |f| f.nil? } }
+  = render :partial => 'feedbacks/index', :locals => { :event => @event, :feedbacks => @event.feedbacks }
 
   .clear
 

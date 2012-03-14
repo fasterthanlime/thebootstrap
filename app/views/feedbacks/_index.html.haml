@@ -1,15 +1,28 @@
 - feedbacks.each do |f|
-  %span.symbol c
-  f.content
-  - if not f.url.nil?
-    %a(href="#{f.url}")
-      %span.symbol j
-      Link
+  .feedback
+    %strong
+      %span.symbol.big c
+      feedback
+    from
+    %a(href="https://twitter.com/#{@_current_user.nick}")= "@#{@_current_user.nick}"
+    %p
+      = f.content
+    %p
+      - if not f.url.nil? and not f.url.empty?
+        %a(href="#{f.url}")
+          %span.symbol j
+          = f.url
+    .clear
+
+%h3 Post feedback
 
 = form_tag("/events/#{event.id}/feedbacks", :class => 'feedback') do
   %p
+    %strong
+      %span.symbol.big c
+      feedback
+    from
     %a(href="https://twitter.com/#{@_current_user.nick}")= "@#{@_current_user.nick}"
-    says:
 
   %p
     = text_area_tag 'content', '', :placeholder => 'something about this event'

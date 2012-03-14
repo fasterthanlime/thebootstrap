@@ -12,4 +12,8 @@ private
     @_current_user ||= session[:current_auth_hash] &&
       User.find_by_auth_hash(session[:current_auth_hash])
   end
+
+  def is_admin
+    current_user.admin == true
+  end
 end

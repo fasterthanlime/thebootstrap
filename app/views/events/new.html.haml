@@ -1,0 +1,36 @@
+.content
+  = render :partial => 'topbar', :locals => { :section => 'new event' }
+
+  %h3 New event
+
+  = form_tag("/events/") do
+    %p
+      %span.symbol c
+      = text_field_tag 'name', '', :placeholder => 'name of the event'
+
+    %p
+      %span.symbol L
+      = text_field_tag 'place', '', :placeholder => 'where'
+
+    %p
+      %span.symbol P
+      = text_field_tag 'when', '', :placeholder => 'when?'
+      %span#when_repr
+        (exact date will appear here)
+
+    %p
+      = hidden_field_tag 'occurs_at', '', :placeholder => 'where the event takes place'
+
+    %p
+      = text_area_tag 'description', '', :placeholder => 'what is this event about, in a few sentences, and instructions on how to meet up'
+
+    .create-event
+      %a(href='#' class='button' onclick='$(this).closest("form").submit(); return false;')
+        %span.symbol +
+        Create event
+
+    .clear
+
+  = render :partial => 'account'
+
+= render :partial => 'footer'
