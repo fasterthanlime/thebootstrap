@@ -9,11 +9,15 @@ You can also read my long-winded post on the thought process behind it: [Hi, the
 
 ## I'm not in Switzerland, what's in it for me?
 
-I, [@nddrylliog](https://twitter.com/nddrylliog), can only afford (time-wise) to operate and animate the swiss bootstrap.
+Not much so far. Since it's open-source software, you could just roll out your own instance.
 
-However, if you want to start a similar thing in your local community, feel free to roll out your own install. I'll be happy to help!
+However, I'd rather work directly with you and set you up with a subdomain for your own community: this way we don't get too fragmented.
 
-## I want to manage my own instance, how do I get started?
+Remember that the bootstrap exists to serve existing real-life communities, not to create online communities out of thin air.
+
+If you're interested in a bootstrap subdomain for your own community, [open an issue on GitHub](https://github.com/nddrylliog/thebootstrap/issues) or [drop me an e-mail](mailto:amos@official.fm)
+
+## I want to get the software to run, where do I start?
 
 Read INSTALL.md, it should get you started quickly.
 
