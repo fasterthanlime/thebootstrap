@@ -1,4 +1,6 @@
 - feedbacks.each do |f|
+  %span.symbol c
+  f.content
   - if not f.url.nil?
     %a(href="#{f.url}")
       %span.symbol j

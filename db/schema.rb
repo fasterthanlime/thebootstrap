@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120313160020) do
     t.string   "name"
     t.text     "description"
     t.text     "place"
+    t.datetime "occurs_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,12 +32,11 @@ ActiveRecord::Schema.define(:version => 20120313160020) do
   create_table "feedbacks", :force => true do |t|
     t.string   "url"
     t.text     "content"
-    t.integer  "attendance_id"
+    t.integer  "user_id"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "feedbacks", ["attendance_id"], :name => "index_feedbacks_on_attendance_id"
 
   create_table "users", :force => true do |t|
     t.string   "nick"
