@@ -11,4 +11,13 @@ class FeedbacksController < ApplicationController
     redirect_to event
   end
 
+  def destroy
+    feedback = Feedback.find(params[:id])
+    if feedback.user.id == current_user.id || current_user.admin == true
+      feedback.destroy
+    end
+    
+    redirect_to feedback.event
+  end
+
 end
