@@ -21,6 +21,15 @@ form textarea, form input {
 }
 
 form input {
+    border-color: #923;
+}
+
+
+form input.valid {
+    border-color: #2d3;
+}
+
+form input {
     width: 300pt;
 }
 

@@ -6,12 +6,24 @@ $ () ->
   $when = $('input#when')
   $when_repr = $('#when_repr')
   $occurs_at = $('#occurs_at')
-  update = () ->
+  update_when = () ->
       d = Date.parse($when.val())
       if d
         s = d.toString('dddd, MMMM d, yyyy, HH:mm')
         $when_repr.html(s)
         s2 = d.toISOString()
         $occurs_at.val(s2)
-  $when.keypress update
-  $when.change update
+        $when.addClass 'valid' 
+      else
+        $when.removeClass 'valid' 
+  $when.keypress update_when
+  $when.change update_when
+
+  update_name = () ->
+      v = $(this).val()
+      if v.length > 0
+        $(this).addClass 'valid'
+      else
+        $(this).removeClass 'valid'
+  $('input#name, input#place').keypress(update_name).change(update_name)
+

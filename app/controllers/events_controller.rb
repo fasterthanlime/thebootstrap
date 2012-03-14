@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = Event.create({
+    event = Event.new({
       name: params[:name],
       place: params[:place],
       description: params[:description],
@@ -21,14 +21,24 @@ class EventsController < ApplicationController
     }) do |e|
       e.occurs_at = params[:occurs_at]
     end
-    current_user.attend!(event)
-
-    redirect_to event
+    valid = event.save
+    
+    if valid
+      current_user.attend!(event)
+      redirect_to event
+    else
+      flash[:error] = 'Invalid data! Try again to create the event'
+      redirect_to '/events/new'
+    end
   end
 
   def show
     id = params[:id]
-    @event = Event.find(id)
+    if Event.exists?(id)
+      @event = Event.find(id)
+    else
+      redirect_to :root
+    end
   end
 
 private
