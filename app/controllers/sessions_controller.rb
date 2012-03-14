@@ -4,6 +4,11 @@ class SessionsController < ApplicationController
   skip_before_filter :require_login
 
   def new
+    p current_user
+    if current_user
+      redirect_to :root
+      return
+    end
   end
 
   def create
@@ -25,11 +30,5 @@ class SessionsController < ApplicationController
   def destroy
     session[:current_auth_hash] = ''
     redirect_to :root
-  end
-
-private
-
-  def auth_hash
-    "#{request.env['omniauth.auth']['uid']}"
   end
 end

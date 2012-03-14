@@ -1,6 +1,6 @@
 - feedbacks.each do |f|
   .feedback
-    - if f.user.id == @_current_user.id
+    - if f.user.id == @_current_user.id || @_current_user.admin == true
       .delete
         = link_to "/events/#{event.id}/feedbacks/#{f.id}", :method => :delete, :class => :button do
           %span.symbol -

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_filter :mark_admin
 
   def index
-    @events = Event.top_visible_events
+    @events = Event.upcoming_events
   end
 
   def new
