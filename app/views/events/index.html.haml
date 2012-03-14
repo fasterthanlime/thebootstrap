@@ -29,12 +29,18 @@
     and interrogations.
 
   %h3= "#{@when.capitalize} events"
+  - if @when == 'past'
+    %a(href='/') See upcoming events
+  - else
+    %a(href='/events/?when=past') See past events
+  .clear
 
   .events
     - @events.each do |e|
       = render :partial => 'events/teaser', :locals => { :event => e }
 
   .clear
+
   .new-event
     = link_to '/events/new', :class => 'button' do
       %span.symbol +
