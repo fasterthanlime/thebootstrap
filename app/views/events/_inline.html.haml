@@ -9,6 +9,7 @@
     = event.place
 
   .participants 
+    = event.occurs_at.localtime.to_formatted_s(:long_ordinal)
     with 
     - if event.users.empty?
       nobody so far. be the first!

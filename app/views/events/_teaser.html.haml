@@ -9,6 +9,8 @@
       &mdash;
       = event.place
       .event-details
+        in
+        = distance_of_time_in_words_to_now(event.occurs_at.localtime)
         with
         %span.symbol U
         = event.attendances.count

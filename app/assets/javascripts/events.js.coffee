@@ -6,10 +6,12 @@ $ () ->
   $when = $('input#when')
   $when_repr = $('#when_repr')
   $occurs_at = $('#occurs_at')
-  $when.keypress () ->
+  update = () ->
       d = Date.parse($when.val())
       if d
-        s = d.toString('dddd, MMMM d, yyyy')
+        s = d.toString('dddd, MMMM d, yyyy, HH:mm')
         $when_repr.html(s)
         s2 = d.toISOString()
         $occurs_at.val(s2)
+  $when.keypress update
+  $when.change update

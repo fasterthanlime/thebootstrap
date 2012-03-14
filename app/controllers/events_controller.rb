@@ -16,9 +16,10 @@ class EventsController < ApplicationController
     event = Event.create({
       name: params[:name],
       place: params[:place],
-      occurs_at: params[:occurs_at],
       description: params[:description],
-    })
+    }) do |e|
+      e.occurs_at = params[:occurs_at]
+    end
     current_user.attend!(event)
 
     redirect_to event
