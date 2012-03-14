@@ -6,10 +6,6 @@ class EventsController < ApplicationController
   end
 
   def new
-    if not is_admin
-      redirect_to '/events'
-      return
-    end
   end
 
   def create
@@ -38,6 +34,17 @@ class EventsController < ApplicationController
       @event = Event.find(id)
     else
       redirect_to :root
+    end
+  end
+
+  def destroy
+    id = params[:id]
+    event = Event.find(id)
+    if event.creator.id == current_user.id || current_user.admin == true
+      event.destroy
+      redirect_to :root
+    else
+      redirect_to event
     end
   end
 

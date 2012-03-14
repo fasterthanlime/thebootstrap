@@ -36,6 +36,13 @@
   - else
     = event.description
 
+  - if @_current_user.id == event.creator.id || @_current_user.admin == true
+    .clear
+    .delete
+      = link_to "/events/#{event.id}", :method => :delete, :class => 'button' do
+        %span.symbol -
+        Delete event
+
   %p.note
     This event was proposed by
     %a(href="https://twitter.com/#{event.creator.nick}") @#{event.creator.nick}
