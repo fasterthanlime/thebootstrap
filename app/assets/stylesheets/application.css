@@ -23,7 +23,7 @@ body {
     min-height: 100%;
 }
 
-#content {
+.content {
     background: #222;
     max-width: 800px;
     margin: 0 auto 0 auto;
@@ -31,7 +31,7 @@ body {
     border-radius: 5px;
     border: 1px solid #444;
 
-    padding: 50px;
+    padding: 50px 40px 20px 40px;
 }
 
 h3 {
@@ -62,10 +62,14 @@ h3 {
     color: #893;
 }
 
-.logout a, .logout a:visited {
+.account {
+    margin-top: 30px;
+    font-size: 12pt;
+}
+
+.logout {
     float: right;
     margin-right: -20px;
-    font-size: 12pt;
 }
 
 .small-logo {

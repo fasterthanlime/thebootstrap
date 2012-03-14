@@ -1,3 +1,4 @@
 class Feedback < ActiveRecord::Base
-  belongs_to :attendance
+  belongs_to :user
+  belongs_to :event
 end

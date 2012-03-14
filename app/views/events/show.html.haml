@@ -1,13 +1,15 @@
-#content
+.content
   = render :partial => 'topbar', :locals => { :section => 'events' }
 
   = link_to '/' do
     &larr; Back to all events
 
-  = render :partial => 'inline', :locals => { :event => @event, :attendance => @event.attendances.first }
+  = render :partial => 'inline', :locals => { :event => @event, :attendance => @_current_user.attendance_for(@event) }
 
   %h3 Feedback
 
-  = render :partial => 'feedback/index', :locals => { :feedbacks => @event.attendances.map { |a| a.feedback }.reject { |f| f.nil? } }
+  = render :partial => 'feedback/index', :locals => { :event => @event, :feedbacks => @event.attendances.map { |a| a.feedback }.reject { |f| f.nil? } }
 
   .clear
+
+  = render :partial => 'account'

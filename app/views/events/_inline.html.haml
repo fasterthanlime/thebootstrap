@@ -1,4 +1,21 @@
 .event
+  %h3.compact
+    - if @_current_user.attending?(event)
+      %span.symbol.attending /
+    - else
+      %span.symbol.not-attending /
+    = event.name
+    &mdash;
+    = event.place
+
+  .participants 
+    with 
+    - if event.users.empty?
+      nobody so far. be the first!
+    - else
+      - event.users.each do |u|
+        %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
+
   .attend
     - if attendance.nil?
       = link_to "/events/#{event.id}/attendances", :method => :post, :class => 'button' do
@@ -9,21 +26,6 @@
         %span.symbol -
         Woops, can't come
 
-  %h3
-    %a(href="/events/#{event.id}")
-      %span.symbol /
-      = event.name
-      &mdash;
-      = event.place
-
-  .participants 
-    (with 
-    - if event.users.empty?
-      nobody
-    - else
-      - event.users.each do |u|
-        %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
-    )
 
   %h3 Description
   - if event.description.nil?

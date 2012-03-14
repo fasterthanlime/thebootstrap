@@ -1,4 +1,4 @@
-#content
+.content
   = render :partial => 'topbar', :locals => { :section => 'events' }
 
   %p
@@ -32,9 +32,6 @@
     - @events.each do |e|
       = render :partial => 'events/teaser', :locals => { :event => e }
 
-  .logout
-    = link_to '/logout' do
-      %span.symbol X
-      Sign out
+  = render :partial => 'account'
 
 = render :partial => 'footer'

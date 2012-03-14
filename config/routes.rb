@@ -1,4 +1,6 @@
 Thebootstrap::Application.routes.draw do
+  get "feedbacks/create"
+
   match 'auth/:provider/callback', :to => 'sessions#create'
   match 'auth/failure', :to => 'sessions#failure'
   
@@ -7,6 +9,7 @@ Thebootstrap::Application.routes.draw do
   
   resources :events do
     resources :attendances
+    resources :feedbacks
   end
   
   root :to => 'events#index'

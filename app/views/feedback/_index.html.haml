@@ -1,2 +1,20 @@
 - feedbacks.each do |f|
-  = f.url
+  - if not f.url.nil?
+    %a(href="#{f.url}")
+      %span.symbol j
+      Link
+
+= form_tag("/events/#{event.id}/feedbacks", :class => 'feedback') do
+  %p
+    %a(href="https://twitter.com/#{@_current_user.nick}")= "@#{@_current_user.nick}"
+    says:
+
+  %p
+    = text_area_tag 'content', '', :placeholder => 'something about this event'
+
+  %p
+    = text_field_tag 'url', '', :placeholder => 'http://...'
+
+  %a(href='#' class='button' onclick='$(this).closest("form").submit(); return false;')
+    %span.symbol c
+    Post feedback

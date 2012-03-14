@@ -1,7 +1,16 @@
 .event
   %h3
     %a(href="/events/#{event.id}")
-      %span.symbol /
+      - if @_current_user.attending?(event)
+        %span.symbol.attending /
+      - else
+        %span.symbol.not-attending /
       = event.name
       &mdash;
       = event.place
+      .event-details
+        with
+        %span.symbol U
+        = event.attendances.count
+        - if @_current_user.attending?(event)
+          , including you!
