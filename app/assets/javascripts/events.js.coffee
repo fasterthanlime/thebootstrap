@@ -13,17 +13,21 @@ $ () ->
         $when_repr.html(s)
         s2 = d.toISOString()
         $occurs_at.val(s2)
-        $when.addClass 'valid' 
+        $when.removeClass 'invalid'
+        $when.addClass 'valid'
       else
-        $when.removeClass 'valid' 
+        $when.removeClass 'valid'
+        $when.addClass 'invalid'
   $when.keypress update_when
   $when.change update_when
 
   update_name = () ->
       v = $(this).val()
       if v.length > 0
+        $(this).removeClass 'invalid'
         $(this).addClass 'valid'
       else
         $(this).removeClass 'valid'
+        $(this).addClass 'invalid'
   $('input#name, input#place').keypress(update_name).change(update_name)
 

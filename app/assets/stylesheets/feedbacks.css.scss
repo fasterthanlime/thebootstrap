@@ -20,7 +20,7 @@ form textarea, form input {
     border-radius: 3px;
 }
 
-form input {
+form input.invalid {
     border-color: #923;
 }
 

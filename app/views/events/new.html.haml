@@ -9,15 +9,15 @@
   = form_tag("/events/") do
     %p
       %span.symbol c
-      = text_field_tag 'name', '', :placeholder => 'name of the event'
+      = text_field_tag 'name', '', { :placeholder => 'name of the event', :class => 'invalid' }
 
     %p
       %span.symbol L
-      = text_field_tag 'place', '', :placeholder => 'where'
+      = text_field_tag 'place', '', { :placeholder => 'where', :class => 'invalid' }
 
     %p
       %span.symbol P
-      = text_field_tag 'when', '', :placeholder => 'when?'
+      = text_field_tag 'when', '', { :placeholder => 'when?', :class => 'invalid' }
       %span#when_repr
         (exact date will appear here)
 
