@@ -1,8 +1,40 @@
-= render :partial => 'topbar'
-
 #content
-  %h2 Events
+  = render :partial => 'topbar', :locals => { :section => 'events' }
+
+  %p
+    Fleshing out an
+    
+    %strong
+      %span.symbol C
+      idea
+    is hard. Staying motivated is especially
+    %strong
+      %span.symbol W
+      difficult
+    if you have to work alone on a project for a long period.
+
+  %p
+    This is why it's good to take some
+    %strong
+      %span.symbol P
+      time off
+    and connect with
+    %strong
+      %span.symbol U
+      people
+    with similar
+    %strong
+      %span.symbol R
+      challenges
+    and interrogations.
 
   .events
     - @events.each do |e|
-      = render :partial => 'events/inline', :locals => { :e => e }
+      = render :partial => 'events/teaser', :locals => { :event => e }
+
+  .logout
+    = link_to '/logout' do
+      %span.symbol X
+      Sign out
+
+= render :partial => 'footer'

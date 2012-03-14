@@ -1,15 +1,15 @@
 .event
   %h3
-    %a(href="/events/#{e.id}")
-      = e.name
-  %h4= e.place
-  %p= e.description
+    %a(href="/events/#{event.id}")
+      = event.name
+  %h4= event.place
+  %p= event.description
   .participants 
-    - if e.users.empty?
+    - if event.users.empty?
       none
     - else
-      - e.users.each do |u|
+      - event.users.each do |u|
         %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
     .attend
-      = link_to "/events/#{e.id}/attendances", :method => :post do
+      = link_to "/events/#{event.id}/attendances", :method => :post do
         &oplus; Count me in!

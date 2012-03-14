@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.events .event {
-    border: 1px solid #999;
-    border-radius: 8px;
-    padding: 10px;
-    width: 600px;
-    margin: 30px auto 0 auto;
-}
-
 .events .event h3 {
     margin: 0;
 }
@@ -20,4 +12,17 @@
 
 .attend {
     float: right;
+}
+
+.event {
+    margin-top: 30px;
+}
+
+.event h3 {
+    font-weight: normal;
+    font-size: 28pt;
+}
+
+.event h3 a, .event h3 a:visited {
+    color: #289;
 }

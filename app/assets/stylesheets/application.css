@@ -8,13 +8,6 @@
 
 .topbar {
     margin: 0;
-    padding: 10px;
-}
-
-.logout {
-    display: block;
-    float: right;
-    margin-right: 20px;
 }
 
 html, body {
@@ -50,10 +43,30 @@ body {
     font-size: 32pt;
 }
 
-.logo {
+.small-logo, .logo {
     font-family: FFFTusjBold;
+}
+
+.small-logo strong {
+    font-weight: normal;
     color: #893;
+}
+
+.logout a, .logout a:visited {
+    float: right;
+    margin-right: -20px;
+    font-size: 12pt;
+}
+
+.small-logo {
+    margin-top: -30px;
+    font-size: 43pt;
+    color: white;
+}
+
+.logo {
     font-size: 82pt;
+    color: #893;
 }
 
 .tagline p {
@@ -66,7 +79,7 @@ body {
     font-size: 20pt;
 }
 
-.welcome strong, .small-logo {
+strong {
     color: #893;
     font-weight: normal;
 }
@@ -80,13 +93,13 @@ a:hover {
 }
 
 a, a:visited {
-    color: #28d;
+    color: #D48;
 }
 
 .footer {
     padding: 20px;
     text-align: center;
-    font-size: 13pt;
+    font-size: 16pt;
 }
 
 a.button, a.button:visited {
@@ -96,7 +109,6 @@ a.button, a.button:visited {
     text-align: center;
     background-color: #D32;
     color: #EEE;
-    width: 300pt;
     padding: 12pt;
     margin: 80px auto 0 auto;
 }
