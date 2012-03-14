@@ -28,6 +28,8 @@
       challenges
     and interrogations.
 
+  %h3= "#{@when.capitalize} events"
+
   .events
     - @events.each do |e|
       = render :partial => 'events/teaser', :locals => { :event => e }

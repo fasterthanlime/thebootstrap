@@ -13,4 +13,8 @@ class Event < ActiveRecord::Base
     def self.upcoming_events
       Event.where("occurs_at >= ?", Time.now).order('occurs_at ASC').all(:limit => 10)
     end
+
+    def self.past_events
+      Event.where("occurs_at <= ?", Time.now).order('occurs_at ASC').all(:limit => 10)
+    end
 end

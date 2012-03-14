@@ -2,7 +2,16 @@ class EventsController < ApplicationController
   before_filter :mark_admin
 
   def index
-    @events = Event.upcoming_events
+    valid_whens = %w(past upcoming)
+    @when = params[:when]
+    @when = 'upcoming' if not valid_whens.include? @when
+
+    # FIXME I'm not happy with that design
+    if @when == 'upcoming'
+        @events = Event.upcoming_events
+    else
+        @events = Event.past_events
+    end
   end
 
   def new
