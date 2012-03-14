@@ -33,8 +33,22 @@
     no description
   - else
     = event.description
+
   %p.note
-    Events from the bootstrap are informal, and often mostly about getting together and talk! You don't need an invitation to come by.
-    
+    This event was proposed by
+    %a(href="https://twitter.com/#{event.creator.nick}") @#{event.creator.nick}
+
   %p.note
-    Marking attendance helps with planning: it is a nice gesture, but not required.
+    The bootstrap
+    %strong
+      %span.symbol B
+      events
+    are informal, you don't need an invitation to come by!
+  
+  %p.note
+    Marking attendance helps with
+    %strong
+      %span.symbol A
+      planning
+    and is a nice &dash; but optional &dash; gesture.
+

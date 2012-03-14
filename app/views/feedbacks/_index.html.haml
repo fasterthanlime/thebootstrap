@@ -5,6 +5,10 @@
       feedback
     from
     %a(href="https://twitter.com/#{@_current_user.nick}")= "@#{@_current_user.nick}"
+    %span(title="#{f.created_at.localtime.to_formatted_s(:long_ordinal)}")
+      = distance_of_time_in_words_to_now(f.created_at)
+    ago
+
     %p
       = f.content
     %p

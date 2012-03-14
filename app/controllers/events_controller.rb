@@ -17,6 +17,7 @@ class EventsController < ApplicationController
       name: params[:name],
       place: params[:place],
       description: params[:description],
+      creator: current_user,
     }) do |e|
       e.occurs_at = params[:occurs_at]
     end
