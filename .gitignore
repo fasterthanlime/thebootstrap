@@ -16,3 +16,6 @@
 
 # Better keep API creds safe
 /config/credentials.yml
+
+# They are precompiled
+/public/assets/
