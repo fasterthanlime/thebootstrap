@@ -4,8 +4,10 @@
   = link_to '/' do
     &larr; Back to all events
 
-  = render :partial => 'inline', :locals => { :event => @event }
+  = render :partial => 'inline', :locals => { :event => @event, :attendance => @event.attendances.first }
 
   %h3 Feedback
 
   = render :partial => 'feedback/index', :locals => { :feedbacks => @event.attendances.map { |a| a.feedback }.reject { |f| f.nil? } }
+
+  .clear

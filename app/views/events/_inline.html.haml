@@ -1,15 +1,37 @@
 .event
+  .attend
+    - if attendance.nil?
+      = link_to "/events/#{event.id}/attendances", :method => :post, :class => 'button' do
+        %span.symbol +
+        Count me in!
+    - else
+      = link_to "/events/#{event.id}/attendances/#{attendance.id}", :method => :delete do
+        %span.symbol -
+        Woops, can't come
+
   %h3
     %a(href="/events/#{event.id}")
+      %span.symbol /
       = event.name
-  %h4= event.place
-  %p= event.description
+      &mdash;
+      = event.place
+
   .participants 
+    (with 
     - if event.users.empty?
-      none
+      nobody
     - else
       - event.users.each do |u|
         %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
-    .attend
-      = link_to "/events/#{event.id}/attendances", :method => :post do
-        &oplus; Count me in!
+    )
+
+  %h3 Description
+  - if event.description.nil?
+    no description
+  - else
+    = event.description
+  %p.note
+    Events from the bootstrap are informal, and often mostly about getting together and talk! You don't need an invitation to come by.
+    
+  %p.note
+    Marking attendance helps with planning: it is a nice gesture, but not required.

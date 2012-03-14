@@ -7,4 +7,11 @@ class AttendancesController < ApplicationController
     redirect_to event
   end
 
+  def destroy
+    attendance = Attendance.find(params[:id])
+    attendance.destroy
+
+    redirect_to attendance.event
+  end
+
 end

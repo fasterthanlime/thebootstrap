@@ -34,6 +34,16 @@ body {
     padding: 50px;
 }
 
+h3 {
+    font-weight: normal;
+    font-size: 28pt;
+    margin-bottom: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
 .symbol {
     font-family: WebSymbolsRegular;
 }
@@ -110,6 +120,5 @@ a.button, a.button:visited {
     background-color: #D32;
     color: #EEE;
     padding: 12pt;
-    margin: 80px auto 0 auto;
 }
 
