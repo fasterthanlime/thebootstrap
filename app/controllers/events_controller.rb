@@ -15,7 +15,7 @@ class EventsController < ApplicationController
       description: params[:description],
       creator: current_user,
     }) do |e|
-      e.occurs_at = params[:occurs_at]
+      e.occurs_at = Time.iso8601(params[:occurs_at])
     end
     valid = event.save
     
