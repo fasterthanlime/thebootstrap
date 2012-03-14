@@ -16,8 +16,7 @@
     - else
       - event.users.each_with_index do |u, i|
         %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
-        - if i < event.users.count - 1
-          %span> ,
+        %span.symbol . 
 
   .attend
     - if attendance.nil?
