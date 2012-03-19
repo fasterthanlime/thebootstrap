@@ -7,14 +7,7 @@ upstream beta_thebootstrap_app {
 server {
 	server_name  beta.thebootstrap.ch;
 
-	root /srv/apps/staging/thebootstrap/public/;
-
 	location / {
-		access_log  /var/log/nginx/beta.thebootstrap.direct.log;
-		try_files $uri @proxy;
-	}
-
-	location @proxy {
 		access_log  /var/log/nginx/beta.thebootstrap.access.log;
                 proxy_pass         http://beta_thebootstrap_app;
                 proxy_redirect     off;
