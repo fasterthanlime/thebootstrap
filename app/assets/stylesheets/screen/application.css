@@ -17,7 +17,7 @@ html, body {
 
 body {
     background: #111;
-    font-family: WCRoughTrad;
+    font-family: OblikBold;
     font-size: 16pt;
     color: white;
     min-height: 100%;
@@ -34,9 +34,13 @@ body {
     padding: 50px 40px 20px 40px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: WCRoughTrad;
+}
+
 h3 {
     font-weight: normal;
-    font-size: 28pt;
+    font-size: 23pt;
     margin-bottom: 10px;
 }
 
