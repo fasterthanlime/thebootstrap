@@ -101,6 +101,10 @@ h3 {
     font-size: 20pt;
 }
 
+.welcome, .tagline p {
+    font-family: WCRoughTrad;
+}
+
 strong {
     color: #893;
     font-weight: normal;
