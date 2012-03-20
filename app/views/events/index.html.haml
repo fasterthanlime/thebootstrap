@@ -28,11 +28,13 @@
       challenges
     and interrogations.
 
-  %h3= "#{@when.capitalize} events"
+  %h3 #{@when.capitalize} events
   - if @when == 'past'
-    %a(href='/') See upcoming events
+    - count = Event.timeslice_count('upcoming')
+    %a(href='/') See #{pluralize(count, 'upcoming event')}
   - else
-    %a(href='/events/?when=past') See past events
+    - count = Event.timeslice_count('past')
+    %a(href='/events/?when=past') See #{pluralize(count, 'past event')}
   .clear
 
   .events

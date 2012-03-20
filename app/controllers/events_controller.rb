@@ -6,12 +6,7 @@ class EventsController < ApplicationController
     @when = params[:when]
     @when = 'upcoming' if not valid_whens.include? @when
 
-    # FIXME I'm not happy with that design
-    if @when == 'upcoming'
-        @events = Event.upcoming_events
-    else
-        @events = Event.past_events
-    end
+    @events = Event.timeslice(@when)
   end
 
   def new

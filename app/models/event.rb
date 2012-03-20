@@ -10,11 +10,22 @@ class Event < ActiveRecord::Base
     validates :occurs_at, :presence => true
     validates :creator, :presence => true
 
-    def self.upcoming_events
-      Event.where("occurs_at >= ?", Time.now).order('occurs_at ASC').all(:limit => 10)
+    def self.timeslice(period, offset = 0, limit = 10)
+        Event.where("occurs_at #{operator period} ?", Time.now) \
+            .order('occurs_at ASC').all(:offset => offset, :limit => 10)
     end
 
-    def self.past_events
-      Event.where("occurs_at <= ?", Time.now).order('occurs_at ASC').all(:limit => 10)
+    def self.timeslice_count(period)
+        Event.where("occurs_at #{operator period} ?", Time.now).count
+    end
+
+    private
+
+    def self.operator(period)
+        if period == 'upcoming'
+            '>='
+        else
+            '<='
+        end
     end
 end
