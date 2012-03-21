@@ -5,10 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :require_login
 
 private
-  # this is pretty much as hackish as it gets
-  URL_REGEXP = /[^"^'^>]((http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/[^ ^<]*)?)/
-  URL_TAG_REGEXP = /<(\w*)>((http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/[^ ^<]*)?)/
-  LINK_REGEXP = /<a href=['"](.*)['"]>(.*)<\/a>/
+  LINK_REGEXP = /<a href=['"]([^'^"]*)['"]>(.*)<\/a>/
 
   def twitter(nick)
       "<a href='https://twitter.com/#{nick}'><span class='symbol'>t</span>&nbsp;#{nick}</a>"
@@ -26,10 +23,8 @@ private
 
   def markup(markdown)
       html = RDiscount.new(' ' + markdown).to_html
-      with_twitters = html.gsub(/@(\w*)/, twitter('\1'))
-      with_implicit_links = with_twitters.gsub(URL_REGEXP, ' <a href="\1">\1</a>') \
-                                         .gsub(URL_TAG_REGEXP, ' <\1><a href="\2">\2</a>')
-      with_pretty_links = with_implicit_links.gsub(LINK_REGEXP) { pretty_link($1, $2) }
+      with_pretty_links = html.gsub(LINK_REGEXP) { pretty_link($1, $2) }
+      with_twitters = with_pretty_links.gsub(/@(\w*)/, twitter('\1'))
   end
 
   helper_method :markup
