@@ -3,7 +3,7 @@
     - if f.user.id == @_current_user.id || @_current_user.admin == true
       .delete
         = link_to "/events/#{event.id}/feedbacks/#{f.id}", :method => :delete, :class => :button do
-          %span.symbol -
+          %span.symbol h
           Delete feedback
 
     %strong
@@ -17,11 +17,12 @@
 
     %p
       = f.content
-    %p
-      - if not f.url.nil? and not f.url.empty?
-        %a(href="#{f.url}")
-          %span.symbol j
-          = f.url
+    - if not f.url.nil? and not f.url.empty?
+      %p
+        %a(href="#{f.url}" class='url')
+          - uri = URI(f.url).normalize
+          %img(src="http://getfavicon.appspot.com/#{f.url}")
+          #{uri.host}#{uri.path}
     .clear
 
 %h3 Post feedback
