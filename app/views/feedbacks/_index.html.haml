@@ -16,7 +16,7 @@
     ago
 
     %p
-      = f.content
+      = raw(markup(f.content))
     - if not f.url.nil? and not f.url.empty?
       %p
         %a(href="#{f.url}" class='url')
@@ -44,3 +44,8 @@
   %a(href='#' class='button' onclick='$(this).closest("form").submit(); return false;')
     %span.symbol c
     Post feedback
+
+  %p.note
+    Hint:
+    %a(href="http://daringfireball.net/projects/markdown/syntax") markdown
+    is supported

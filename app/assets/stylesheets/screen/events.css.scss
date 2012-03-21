@@ -7,7 +7,17 @@
 }
 
 .participants {
+    display: block;
+    float: right;
     color: #777;
+}
+
+.participants ul {
+    list-style-type: none;
+}
+
+.participants ul li {
+    margin-bottom: 5px;
 }
 
 .attend, .new-event a, .delete a {
@@ -20,6 +30,10 @@
     vertical-align: middle;
     font-size: 70%;
     margin-left: 35pt;
+}
+
+.event {
+    font-size: 14pt;
 }
 
 .event .attending, .event .not-attending {

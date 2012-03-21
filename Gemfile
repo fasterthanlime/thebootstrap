@@ -13,6 +13,8 @@ gem 'haml-rails', '~> 0.3.4'
 
 gem 'unicorn', '~> 4.1.1'
 
+gem 'rdiscount', '~> 1.6.8'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

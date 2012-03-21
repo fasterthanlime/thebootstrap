@@ -1,4 +1,28 @@
+.delete
+  = link_to "/events/#{event.id}", :method => :delete, :class => :admin do
+    %span.symbol h
+    Delete event
+
 .event
+  .participants 
+    - if event.users.empty?
+      nobody so far. be the first!
+    - else
+      %ul
+        - event.users.each_with_index do |u, i|
+          %li
+            %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
+
+    .attend
+      - if attendance.nil?
+        = link_to "/events/#{event.id}/attendances", :method => :post, :class => 'button' do
+          %span.symbol +
+          Count me in!
+      - else
+        = link_to "/events/#{event.id}/attendances/#{attendance.id}", :method => :delete do
+          %span.symbol -
+          Woops, can't come
+
   %h3.compact
     - if @_current_user.attending?(event)
       %span.symbol.attending /
@@ -7,56 +31,18 @@
     = event.name
     &mdash;
     = event.place
-
-  .participants 
-    = event.occurs_at.to_formatted_s(:long_ordinal)
-    with 
-    - if event.users.empty?
-      nobody so far. be the first!
-    - else
-      - event.users.each_with_index do |u, i|
-        %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
-        %span.symbol . 
-
-  .attend
-    - if attendance.nil?
-      = link_to "/events/#{event.id}/attendances", :method => :post, :class => 'button' do
-        %span.symbol +
-        Count me in!
-    - else
-      = link_to "/events/#{event.id}/attendances/#{attendance.id}", :method => :delete do
-        %span.symbol -
-        Woops, can't come
+  = event.occurs_at.to_formatted_s(:long_ordinal)
 
 
   %h3 Description
   - if event.description.nil?
     no description
   - else
-    = event.description
+    = raw(markup(event.description))
 
   - if @_current_user.id == event.creator.id || @_current_user.admin == true
     .clear
-    .delete
-      = link_to "/events/#{event.id}", :method => :delete, :class => :admin do
-        %span.symbol h
-        Delete event
 
   %p.note
     This event was proposed by
     %a(href="https://twitter.com/#{event.creator.nick}") @#{event.creator.nick}
-
-  %p.note
-    The bootstrap
-    %strong
-      %span.symbol B
-      events
-    are informal, you don't need an invitation to come by!
-  
-  %p.note
-    Marking attendance helps with
-    %strong
-      %span.symbol A
-      planning
-    and is a nice &dash; but optional &dash; gesture.
-
