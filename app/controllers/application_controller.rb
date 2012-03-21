@@ -5,12 +5,18 @@ class ApplicationController < ActionController::Base
   before_filter :require_login
 
 private
+  def twitter(nick)
+      "<a href='https://twitter.com/#{nick}'><span class='symbol'>t</span>&nbsp;#{nick}</a>"
+  end
 
   def markup(markdown)
-      with_twitters = markdown.gsub(/@(\w*)/, '[@\1](https://twitter.com/\1)')
-      RDiscount.new(with_twitters).to_html
+      html = RDiscount.new(markdown).to_html
+      with_twitters = html.gsub(/@(\w*)/, twitter('\1'))
+      with_twitters 
   end
+
   helper_method :markup
+  helper_method :twitter
 
   def require_login
       redirect_to '/login' if not current_user

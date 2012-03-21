@@ -1,6 +1,6 @@
 .account
   logged in as
-  %a(href="https://twitter.com/#{@_current_user.nick}")= "@#{@_current_user.nick}"
+  = raw(twitter(@_current_user.nick))
   .logout
     = link_to '/logout' do
       %span.symbol X

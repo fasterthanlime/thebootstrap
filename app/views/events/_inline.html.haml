@@ -11,16 +11,16 @@
       %ul
         - event.users.each_with_index do |u, i|
           %li
-            %a(href='https://twitter.com/#{u.nick}/') @#{u.nick}
+            = raw(twitter(u.nick))
 
     .attend
       - if attendance.nil?
         = link_to "/events/#{event.id}/attendances", :method => :post, :class => 'button' do
-          %span.symbol +
+          %span.symbol R
           Count me in!
       - else
         = link_to "/events/#{event.id}/attendances/#{attendance.id}", :method => :delete do
-          %span.symbol -
+          %span.symbol X
           Woops, can't come
 
   %h3.compact
@@ -44,5 +44,9 @@
     .clear
 
   %p.note
-    This event was proposed by
-    %a(href="https://twitter.com/#{event.creator.nick}") @#{event.creator.nick}
+    This
+    %strong
+      %span.symbol r
+      event
+    was proposed by
+    = raw(twitter(event.creator.nick))

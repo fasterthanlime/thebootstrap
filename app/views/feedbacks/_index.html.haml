@@ -10,7 +10,7 @@
       %span.symbol.big c
       feedback
     from
-    %a(href="https://twitter.com/#{f.user.nick}")= "@#{f.user.nick}"
+    = raw(twitter(f.user.nick))
     %span(title="#{f.created_at.localtime.to_formatted_s(:long_ordinal)}")
       = distance_of_time_in_words_to_now(f.created_at)
     ago
@@ -32,7 +32,7 @@
     %span.symbol.big c
     feedback
   from
-  %a(href="https://twitter.com/#{@_current_user.nick}")= "@#{@_current_user.nick}"
+  = raw(twitter(@_current_user.nick))
   right now!
 
   %p
