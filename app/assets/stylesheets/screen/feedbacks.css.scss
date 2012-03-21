@@ -7,9 +7,10 @@
     margin-left: 10px;
     margin-top: 40px;
     border-radius: 5px;
-    padding: 5px 10px 5px 10px;
+    padding: 8px 10px 8px 10px;
     background: #333;
     color: #ddd;
+    border-left: 5px solid #777;
 }
 
 .feedback p {
@@ -36,7 +37,11 @@
     margin: 0;
 }
 
-form textarea, form input {
+form.feedback {
+    width: 450pt;
+}
+
+form.feedback textarea, form.feedback input {
     background-color: #181818;
     color: #eee;
     border: 1px solid white;
@@ -45,28 +50,23 @@ form textarea, form input {
     border-radius: 3px;
     font-family: OblikBold;
     font-size: 13pt;
+    width: 300pt;
 }
 
-form input.invalid {
+form.feedback input.invalid {
     border-color: #923;
 }
 
 
-form input.valid {
+form.feedback input.valid {
     border-color: #2d3;
 }
 
-form input {
-    width: 300pt;
-}
-
-form textarea {
-    width: 100%;
-    min-height: 200px;
+form.feedback textarea {
+    min-height: 80pt;
 }
 
 form.feedback a.button {
     float: right;
-    margin-top: -50pt;
 }
 
