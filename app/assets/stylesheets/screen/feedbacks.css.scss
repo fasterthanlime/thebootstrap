@@ -2,7 +2,8 @@
     float: right;
 }
 
-.feedback {
+div.feedback, form.feedback {
+    width: 450pt;
     font-size: 13pt;
     margin-left: 10px;
     margin-top: 40px;
@@ -27,18 +28,6 @@
 
 .feedback a.url img {
     vertical-align: middle;
-}
-
-.feedback .delete .button {
-    background: none;
-    color: #b21;
-    font-size: 85%;
-    padding: 0;
-    margin: 0;
-}
-
-form.feedback {
-    width: 450pt;
 }
 
 form.feedback textarea, form.feedback input {
@@ -68,5 +57,6 @@ form.feedback textarea {
 
 form.feedback a.button {
     float: right;
+    margin-top: -40pt;
 }
 

@@ -97,6 +97,14 @@ h3 {
     margin-bottom: 60px;
 }
 
+a.admin, a.admin:visited {
+    background: none;
+    color: #b21 !importan;
+    font-size: 12pt; 
+    padding: 0;
+    margin: 0;
+}
+
 .welcome {
     font-size: 20pt;
 }
