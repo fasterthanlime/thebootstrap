@@ -5,7 +5,6 @@ class FeedbacksController < ApplicationController
       event: event,
       user: current_user,
       content: params[:content],
-      url: params[:url]
     })
 
     redirect_to event
