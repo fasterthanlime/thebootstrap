@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120314044559) do
+ActiveRecord::Schema.define(:version => 20120321024412) do
 
   create_table "attendances", :force => true do |t|
     t.integer  "user_id"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20120314044559) do
   end
 
   create_table "feedbacks", :force => true do |t|
-    t.string   "url"
     t.text     "content"
     t.integer  "user_id"
     t.integer  "event_id"

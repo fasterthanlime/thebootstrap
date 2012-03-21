@@ -17,12 +17,6 @@
 
     %p
       = raw(markup(f.content))
-    - if not f.url.nil? and not f.url.empty?
-      %p
-        %a(href="#{f.url}" class='url')
-          - uri = URI(f.url).normalize
-          %img(src="http://getfavicon.appspot.com/#{f.url}")
-          #{uri.host}#{uri.path}
     .clear
 
 %h3 Post feedback
@@ -37,9 +31,6 @@
 
   %p
     = text_area_tag 'content', '', :placeholder => 'something about this event'
-
-  %p
-    = text_field_tag 'url', '', :placeholder => 'http://...'
 
   %a(href='#' class='button' onclick='$(this).closest("form").submit(); return false;')
     %span.symbol c
