@@ -7,7 +7,7 @@ $ () ->
   $when_repr = $('#when_repr')
   $occurs_at = $('#occurs_at')
   update_when = () ->
-      d = Date.parse($when.val()).setTimezoneOffset(0)
+      d = Date.parse($when.val())
       if d
         s = d.toString('dddd, MMMM d, yyyy, HH:mm')
         $when_repr.html(s)

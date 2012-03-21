@@ -6,7 +6,8 @@
 .event
   .participants 
     - if event.users.empty?
-      nobody so far. be the first!
+      %ul
+        %li nobody so far. be the first!
     - else
       %ul
         - event.users.each_with_index do |u, i|
@@ -44,9 +45,8 @@
     .clear
 
   %p.note
-    This
     %strong
       %span.symbol r
       event
-    was proposed by
+    proposed by
     = raw(twitter(event.creator.nick))

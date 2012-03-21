@@ -29,31 +29,6 @@ div.feedback, form.feedback {
     vertical-align: middle;
 }
 
-form.feedback textarea, form.feedback input {
-    background-color: #181818;
-    color: #eee;
-    border: 1px solid white;
-    margin: 0;
-    padding: 3px;
-    border-radius: 3px;
-    font-family: OblikBold;
-    font-size: 13pt;
-    width: 300pt;
-}
-
-form.feedback input.invalid {
-    border-color: #923;
-}
-
-
-form.feedback input.valid {
-    border-color: #2d3;
-}
-
-form.feedback textarea {
-    min-height: 80pt;
-}
-
 form.feedback a.button {
     float: right;
     margin-top: -40pt;

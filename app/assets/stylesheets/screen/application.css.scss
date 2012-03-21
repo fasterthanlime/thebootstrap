@@ -146,3 +146,28 @@ a.button, a.button:visited {
     padding: 9pt;
 }
 
+form textarea, form input {
+    background-color: #181818;
+    color: #eee;
+    border: 1px solid white;
+    margin: 0;
+    padding: 3px;
+    border-radius: 3px;
+    font-family: OblikBold;
+    font-size: 13pt;
+    width: 300pt;
+}
+
+form input.invalid {
+    border-color: #923;
+}
+
+
+form input.valid {
+    border-color: #2d3;
+}
+
+form textarea {
+    min-height: 80pt;
+}
+
