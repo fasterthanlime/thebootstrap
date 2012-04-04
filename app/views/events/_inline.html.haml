@@ -1,7 +1,8 @@
 .delete
   = link_to "/events/#{event.id}", :method => :delete, :class => :admin do
-    %span.symbol h
-    Delete event
+    - if @_current_user.id == event.creator.id || @_current_user.admin == true
+      %span.symbol h
+      Delete event
 
 .event
   .participants 
