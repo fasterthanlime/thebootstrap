@@ -32,7 +32,10 @@ private
   helper_method :pretty_url
 
   def require_login
-      redirect_to '/login' if not current_user
+      if not current_user
+          session[:return_to] = request.url
+          redirect_to '/login'
+      end
   end
 
   def current_user

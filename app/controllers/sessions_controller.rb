@@ -20,8 +20,9 @@ class SessionsController < ApplicationController
 
     session[:current_auth_hash] = @user.auth_hash
 
-    if @user.new_record?
-      redirect_to '/pages/welcome'
+    if url = session[:return_to]
+      session.delete :return_to
+      redirect_to url
     else
       redirect_to :root
     end
