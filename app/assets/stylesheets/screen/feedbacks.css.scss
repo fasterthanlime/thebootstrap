@@ -19,7 +19,7 @@ div.feedback, form.feedback {
     margin-bottom: 0;
 }
 
-.feedback a.url, .feedback a.url:visited {
+a.url, a.url:visited {
     padding: 0;
     margin: 0;
     padding-right: 3px;
@@ -31,13 +31,13 @@ div.feedback, form.feedback {
     color: #eee;
 }
 
-.feedback a.url:hover {
+a.url:hover {
     background: white;
     color: #222;
     text-decoration: none;
 }
 
-.feedback a.url img {
+a.url img {
     width: 16px;
     height: 16px;
     vertical-align: middle;
