@@ -23,7 +23,7 @@ server {
 
 	server_name  thebootstrap.ch;
 
-	root /srv/apps/thebootstrap/public/;
+	root /srv/apps/production/thebootstrap/public/;
 
 	location / {
 		access_log  /var/log/nginx/thebootstrap.direct.log;
